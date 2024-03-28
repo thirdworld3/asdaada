@@ -1,0 +1,261 @@
+body {
+    background-image: url('bg4.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative; /* Added relative positioning */
+}
+
+header {
+    background: rgb(224, 177, 206);
+    color: #fff;
+    text-align: center;
+    width: 100%;
+}
+
+.header-image {
+    display: block;
+    margin: 20px auto; /* Adjust top and bottom margin as needed */
+    width: 100px; /* Keep the width of the header image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+nav {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav button {
+    color: #fff;
+    background-color: #f55db0;
+    border: none;
+    padding: 8px 12px; /* Adjusted padding */
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 14px; /* Adjusted font size */
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.1s ease, border-radius 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #f5d6f8;
+}
+
+nav button:active {
+    transform: scale(0.95);
+    border-radius: 12px;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    max-width: 950px;
+    margin: 70px auto; /* Adjust margin property to center horizontally */
+    padding: 60px;
+    background: rgba(230, 195, 221, 0.8);
+	opacity: 0.9;
+    text-align: center;
+    animation: popIn 1s ease-out;
+}
+.formBx { /* text sa loob */
+    width: 50%;
+    padding: 0 20px; /* Adjust padding as needed */
+    display: flex;
+    flex-direction: column;
+    animation: popIn 1s ease-out;
+}
+
+.formBx form {
+    width: 100%;
+	margin-bottom: 70px;
+    
+}
+
+.formBx form h2 {
+    color: #3b0a0a;
+    font-weight: 500;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 90px;
+}
+
+.formBx form .inputBox {
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.formBx form .inputBox:last-child {
+    margin-bottom: 0;
+}
+
+.formBx form .inputBox input,
+.formBx form .inputBox textarea {
+
+    position: relative;
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    color: #333;
+    padding-bottom: 0px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    border-bottom: 2px solid#333; /*kulay sa blank*/
+    resize: none;
+}
+
+.formBx form .validId {
+    position: relative;
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    color: #fff;
+    padding-bottom: 0px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    border-bottom: 2px solid #fff;
+    resize: none;
+}
+
+.formBx form .inputBox textarea {
+    height: 100px;
+	
+}
+
+.formBx form .inputBox input[type="submit"] {
+    background: #fff;
+    padding: 12px 24px;;
+    margin-top: 60px;
+    width: 100px;
+    cursor: pointer;
+    background: #333; /*kulay sa send */
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+	text-align: center;
+}
+
+.formBx form .validId {
+    border-bottom: none;
+}
+
+.formBx form label[for="validId"] {
+    background: #333; /*kulay sa provide any valid */
+    color: #fff; /* kulay ng text */
+	text-align: center;
+    padding: 8px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Change styles on hover */
+.formBx form label[for="validId"]:hover {
+    background: #9b9b9b;
+	color: #000000;
+}
+
+.formBx form .inputBox input[type="submit"]:hover {
+    background-color: #5e5e5e; /* Change to the desired hover background color */
+    transform: scale(1.05); /* Optional: Adjust the scale for the hover effect */
+}
+
+
+.formBx form .inputBox span {
+    position: absolute;
+    left: 0;
+    font-size: 16px;
+    font-weight: 300;
+    display: inline-block;
+    pointer-events: none;
+    letter-spacing: 1px;
+    color: #310505; /*kulay ng label*/
+    transition: all 0.2s;
+}
+
+/* Hide the text but keep it accessible for screen readers */
+.validId input[type="file"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.formBx form .inputBox input:focus ~ span,
+.formBx form .inputBox textarea:focus ~ span,
+.formBx form .inputBox input:valid ~ span,
+.formBx form .inputBox textarea:valid ~ span {
+    transform: translateY(-24px);
+    color: #472f11; /* type your message */
+    font-size: 14px;
+}
+
+.formBx form .inputBox input:focus,
+.formBx form .inputBox textarea:focus,
+.formBx form .inputBox input:valid,
+.formBx form .inputBox textarea:valid {
+    border-bottom-color: #332008; /*pag cinilick yung form */
+}
+
+
+@media (max-width: 991px) {
+    .formBx {
+        width: 100%;
+        padding: 0 20px; /* Adjust padding as needed */
+    }
+
+    .formBx form {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    margin-top: auto; /* Push the footer to the bottom */
+    width: 100%;
+}
